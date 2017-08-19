@@ -14,8 +14,8 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.monke.mrefreshview.base.MRefreshRecyclerBaseF;
 import com.monke.mrefreshview.circleprogressbar.CircleProgressBar;
 import com.monke.mrefreshview.utils.DensityUtil;
@@ -66,6 +66,9 @@ public class MRefreshRecyclerMaterView extends MRefreshRecyclerBaseF {
         cpbRefresh = (CircleProgressBar) getRefreshView().findViewById(R.id.cpb_refresh);
         cpbRefresh.setShowArrow(true);
         cpbRefresh.setmProgressColor(colorRefresh);
+        cpbRefresh.setScaleType(ImageView.ScaleType.CENTER);
+        cpbRefresh.setScaleX(0);
+        cpbRefresh.setScaleY(0);
     }
 
     protected void initData(AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -85,8 +88,6 @@ public class MRefreshRecyclerMaterView extends MRefreshRecyclerBaseF {
 
     /**
      * 下拉刷新界面UI高度，用来设置初始位置
-     *
-     * @return
      */
     public int refreshViewHeight() {
         return DensityUtil.dp2px(getContext(), 40);
@@ -95,21 +96,18 @@ public class MRefreshRecyclerMaterView extends MRefreshRecyclerBaseF {
     /**
      * 能触发下拉刷新最短长度
      *
-     * @return
      */
     @Override
     public int getMaxPullHeight() {
-        return DensityUtil.dp2px(getContext(), 90) + refreshViewHeight();
+        return DensityUtil.dp2px(getContext(), 80) + refreshViewHeight();
     }
 
     /**
      * 最多下拉长度
-     *
-     * @return
      */
     @Override
     public int getPullToRefreshHeight() {
-        return DensityUtil.dp2px(getContext(), 45) + refreshViewHeight();
+        return DensityUtil.dp2px(getContext(), 40) + refreshViewHeight();
     }
 
     @Override
@@ -120,7 +118,6 @@ public class MRefreshRecyclerMaterView extends MRefreshRecyclerBaseF {
             pullAnimator.cancel();
         cpbRefresh.setShowArrow(true);
         LayoutParams layoutParams = (LayoutParams) getRefreshView().getLayoutParams();
-//        layoutParams.topMargin = -refreshViewHeight() + dur;
         int temp = layoutParams.topMargin+step;
         if(temp<-refreshViewHeight()){
             temp = -refreshViewHeight();
@@ -130,11 +127,19 @@ public class MRefreshRecyclerMaterView extends MRefreshRecyclerBaseF {
         layoutParams.topMargin = temp;
         getRefreshView().setLayoutParams(layoutParams);
         cpbRefresh.rate(dur * 1.0f / maxPullHeight);
+        cpbRefresh.setScaleType(ImageView.ScaleType.CENTER);
+
+        float tempScale = (temp+refreshViewHeight())*1.0f/getPullToRefreshHeight();
+        if(tempScale >1)
+            tempScale = 1;
+        else if(tempScale<0)
+            tempScale = 0;
+        cpbRefresh.setScaleX(tempScale);
+        cpbRefresh.setScaleY(tempScale);
     }
 
     @Override
     public void startRefreshUi(int pulltoRefreshHeight, final int maxPullHeight) {
-
         if (cpbRefresh.isRunning())
             cpbRefresh.stop();
         if (pullAnimator != null && pullAnimator.isRunning())
@@ -149,6 +154,14 @@ public class MRefreshRecyclerMaterView extends MRefreshRecyclerBaseF {
                 layoutParams.topMargin = (int) animation.getAnimatedValue();
                 getRefreshView().setLayoutParams(layoutParams);
                 cpbRefresh.rate(layoutParams.topMargin * 1.0f / maxPullHeight);
+
+                float tempScale = (layoutParams.topMargin+refreshViewHeight())*1.0f/getPullToRefreshHeight();
+                if(tempScale >1)
+                    tempScale = 1;
+                else if(tempScale<0)
+                    tempScale = 0;
+                cpbRefresh.setScaleX(tempScale);
+                cpbRefresh.setScaleY(tempScale);
             }
         });
         pullAnimator.addListener(new Animator.AnimatorListener() {
@@ -191,6 +204,14 @@ public class MRefreshRecyclerMaterView extends MRefreshRecyclerBaseF {
                 layoutParams.topMargin = (int) animation.getAnimatedValue();
                 getRefreshView().setLayoutParams(layoutParams);
                 cpbRefresh.rate(layoutParams.topMargin * 1.0f / getMaxPullHeight());
+
+                float tempScale = (layoutParams.topMargin+refreshViewHeight())*1.0f/getPullToRefreshHeight();
+                if(tempScale >1)
+                    tempScale = 1;
+                else if(tempScale<0)
+                    tempScale = 0;
+                cpbRefresh.setScaleX(tempScale);
+                cpbRefresh.setScaleY(tempScale);
             }
         });
         pullAnimator.start();

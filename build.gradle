@@ -23,6 +23,7 @@ task clean(type: Delete) {
 }
 allprojects {
     tasks.withType(Javadoc) {
+        failOnError false
         options{
             encoding "UTF-8"
             charSet 'UTF-8'

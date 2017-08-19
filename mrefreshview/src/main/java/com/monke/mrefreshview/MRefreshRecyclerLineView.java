@@ -96,12 +96,6 @@ public class MRefreshRecyclerLineView extends MRefreshRecyclerBaseF {
     public void pullingUI(int step,int dur, float durRatio, int pulltoRefreshHeight, int maxPullHeight) {
         if (rpbRefresh.getVisibility() != View.VISIBLE)
             rpbRefresh.setVisibility(VISIBLE);
-//        int temp = rpbRefresh.getSecondDurProgress()+step;
-//        if(temp<0){
-//            temp = 0;
-//        }else if(temp > getPullToRefreshHeight()){
-//            temp = getPullToRefreshHeight();
-//        }
         rpbRefresh.setSecondDurProgress(dur);
     }
 

@@ -45,8 +45,6 @@ import java.util.ArrayList;
 
 /**
  * Fancy progress indicator for Material theme.
- *
- * @hide
  */
 public class MaterialProgressDrawable extends Drawable implements Animatable {
     // Maps to ProgressBar.Large style
@@ -151,9 +149,6 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
     /**
      * Set the overall size for the progress spinner. This updates the radius
      * and stroke width of the ring.
-     *
-     * @param size One of {@link MaterialProgressDrawable.LARGE} or
-     *             {@link MaterialProgressDrawable.DEFAULT}
      */
     public void updateSizes(@ProgressDrawableSize int size) {
         final DisplayMetrics metrics = mResources.getDisplayMetrics();

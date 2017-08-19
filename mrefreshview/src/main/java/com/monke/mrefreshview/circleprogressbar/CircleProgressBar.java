@@ -12,6 +12,8 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.net.Uri;
+import android.support.annotation.ColorRes;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.animation.Animation;
@@ -71,7 +73,7 @@ public class CircleProgressBar extends android.support.v7.widget.AppCompatImageV
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
-        final TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.CircleProgressBar, defStyleAttr, 0);
+        final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleProgressBar, defStyleAttr, 0);
         final float density = getContext().getResources().getDisplayMetrics().density;
 
         mBackGroundColor = a.getColor(R.styleable.CircleProgressBar_cpb_background_color, DEFAULT_CIRCLE_BG_LIGHT);
@@ -247,10 +249,9 @@ public class CircleProgressBar extends android.support.v7.widget.AppCompatImageV
     /**
      * Update the background color of the mBgCircle image view.
      */
-    public void setBackgroundColor(int colorRes) {
+    public void setBackgroundColor(@ColorRes int colorRes) {
         if (getBackground() instanceof ShapeDrawable) {
-            final Resources res = getResources();
-            ((ShapeDrawable) getBackground()).getPaint().setColor(res.getColor(colorRes));
+            ((ShapeDrawable) getBackground()).getPaint().setColor(ContextCompat.getColor(getContext(), colorRes));
         }
     }
 
@@ -332,19 +333,19 @@ public class CircleProgressBar extends android.support.v7.widget.AppCompatImageV
         }
     }
 
-    public void start(){
+    public void start() {
         mProgressDrawable.start();
     }
 
-    public void stop(){
+    public void stop() {
         mProgressDrawable.stop();
     }
 
-    public void rate(float a){
-        mProgressDrawable.setStartEndTrim(-0.25f+a/4f,-0.25f+a);
+    public void rate(float a) {
+        mProgressDrawable.setStartEndTrim(-0.25f + a / 4f, -0.25f + a);
     }
 
-    public Boolean isRunning(){
+    public Boolean isRunning() {
         return mProgressDrawable.isRunning();
     }
 }

@@ -152,9 +152,6 @@ public abstract class MRefreshRecyclerBaseF extends FrameLayout {
 
     /**
      * 重写此方法可以计算滑动与下拉刷新UI的比例问题  默认1：1
-     *
-     * @param res
-     * @return
      */
     public float getSlideCalcu(float res) {
         return res;
@@ -209,26 +206,22 @@ public abstract class MRefreshRecyclerBaseF extends FrameLayout {
 
     /**
      * 加载更多  UI
-     * @param parent
-     * @return
      */
     public abstract View getloadingView(ViewGroup parent);
 
     /**
      * 正在加载   UI效果调整
-     * @param v
      */
     public abstract void startLoadingUI(View v);
 
     /**
      * 加载更多失败   UI效果调整
-     * @param v
      */
     public abstract void errorLoadingUI(View v);
 
     /**
      * 加载或者刷新完成
-     * @param isAll   是否还有更多
+     * 是否还有更多
      */
     public void completeRequest(Boolean isAll) {
         if (mRefreshRecyclerBaseFView.getAdapter() != null) {

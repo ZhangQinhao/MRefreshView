@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -39,8 +39,8 @@ dependencies {
 publish {
     userOrg = 'zhangmonke'//bintray.com用户名
     groupId = 'com.zhangmonke'//jcenter上的路径
-    artifactId = 'ImmerseLayout'//项目名称
-    publishVersion = '1.0.5'//版本号
-    desc = 'some layout for immerse UI'//描述，不重要
-    website = 'https://github.com/ZhangQinhao/ImmerseLayout'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+    artifactId = 'MRefreshView'//项目名称
+    publishVersion = '1.0.1'//版本号
+    desc = 'a widget instead of RecyclerView with pull-to-refresh function.'//描述，不重要
+    website = 'https://github.com/ZhangQinhao/MRefreshView'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
 }
