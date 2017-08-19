@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="mrcv_color_load_text" format="color" />    <!--加载更多  字体颜色-->
+    <attr name="mrcv_color_load_bg" format="color" />       <!--加载更多   背景颜色-->
+    <declare-styleable name="MRefreshRecyclerMaterView">
+        <attr name="mrcv_color_load_text" />    <!--加载更多  字体颜色-->
+        <attr name="mrcv_color_load_bg" />       <!--加载更多   背景颜色-->
+        <attr name="mrcv_color_refresh" format="color" />      <!--下拉刷新  环形进度条颜色-->
+    </declare-styleable>
+
+    <declare-styleable name="MRefreshRecyclerLineView">
+        <attr name="mrcv_color_refresh_bg" format="color" />    <!--下拉刷新  进度条背景颜色-->
+        <attr name="mrcv_color_refresh_progress" format="color" />       <!--下拉刷新  进度条颜色-->
+        <attr name="mrcv_color_load_text" />    <!--加载更多  字体颜色-->
+        <attr name="mrcv_color_load_bg" />       <!--加载更多   背景颜色-->
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressBar">
+        <attr name="cpb_inner_radius" format="dimension" />
+        <attr name="cpb_background_color" format="color" />
+        <attr name="cpb_progress_color" format="color" />
+        <attr name="cpb_progress_stoke_width" format="dimension" />
+        <attr name="cpb_show_arrow" format="boolean" />
+        <attr name="cpb_enable_circle_background" format="boolean" />
+        <attr name="cpb_arrow_width" format="dimension" />
+        <attr name="cpb_arrow_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RefreshProgressBar">
+        <attr name="max_progress" format="integer" />
+        <attr name="dur_progress" format="integer" />
+        <attr name="second_dur_progress" format="dimension" />
+        <attr name="second_max_progress" format="dimension" />
+        <attr name="bg_color" format="color" />
+        <attr name="second_color" format="color" />
+        <attr name="font_color" format="color" />
+        <attr name="speed" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/linear"
+        android:orderInCategory="1"
+        android:title="LinearLayoutManager"/>
+    <item
+        android:id="@+id/grid"
+        android:orderInCategory="2"
+        android:title="GridLayoutManager"/>
+</menu>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MRefreshView</string>
+
+    <string name="tv_loadmore_view_loading">正在加载...</string>
+
+    <string name="tv_loadmore_view_loaderror">加载失败，点击重试</string>
+</resources>

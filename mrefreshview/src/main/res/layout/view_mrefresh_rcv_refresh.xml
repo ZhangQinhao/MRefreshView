@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.monke.mrefreshview.circleprogressbar.CircleProgressBar
+        android:id="@+id/cpb_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="2dp"
+        app:cpb_show_arrow="true"
+        app:cpb_arrow_height="5dp"
+        app:cpb_arrow_width="7dp"
+        app:cpb_progress_color="#ffc0cb"
+        app:cpb_enable_circle_background="true"
+        app:cpb_progress_stoke_width="3dp"/>
+</FrameLayout>
