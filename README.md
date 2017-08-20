@@ -124,6 +124,7 @@ mrcv = (MRefreshRecyclerMaterView) findViewById(R.id.mrcv);
 ###MRefreshRecyclerLineView
 
 ![enter description here][2]
+
 ####使用
 ``` stylus
 <com.monke.mrefreshview.MRefreshRecyclerLineView
