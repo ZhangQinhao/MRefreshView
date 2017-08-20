@@ -22,7 +22,8 @@
 
 ### MRefreshRecyclerMaterView
 
-![enter description here][1]
+<img src="./images/gif_1.gif" width="40%" alt=""/>
+
 #### 使用
 ``` stylus
 <com.monke.mrefreshview.MRefreshRecyclerMaterView
@@ -123,7 +124,7 @@ mrcv = (MRefreshRecyclerMaterView) findViewById(R.id.mrcv);
 ```
 ### MRefreshRecyclerLineView
 
-![enter description here][2]
+<img src="./images/gif_2.gif" width="40%" alt=""/>
 
 #### 使用
 ``` stylus
@@ -149,8 +150,3 @@ mrcv = (MRefreshRecyclerMaterView) findViewById(R.id.mrcv);
 如果用户需要自定义自己的上下拉刷新控件（保证下拉效果是不下滑item）  都可以继承`MRefreshRecyclerBaseF`来实现，可以参考`MRefreshRecyclerLineView`/`MRefreshRecyclerMaterView`,
 下个版本会实现基于`ScrollView`的刷新，同时会完成下拉刷新头部与item同时滚动的效果。
 此控件的上拉刷新，下拉加载的时机已经封装在Adapter中，用户只需要把经历放到业务逻辑上就可以。
-
-
-
-[1]: ./images/gif_1.gif "1.gif"
-[2]: ./images/gif_2.gif "2.gif"
