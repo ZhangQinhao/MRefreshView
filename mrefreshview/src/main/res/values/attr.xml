@@ -3,6 +3,7 @@
 
     <attr name="mrcv_color_load_text" format="color" />    <!--加载更多  字体颜色-->
     <attr name="mrcv_color_load_bg" format="color" />       <!--加载更多   背景颜色-->
+
     <declare-styleable name="MRefreshRecyclerMaterView">
         <attr name="mrcv_color_load_text" />    <!--加载更多  字体颜色-->
         <attr name="mrcv_color_load_bg" />       <!--加载更多   背景颜色-->
