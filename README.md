@@ -114,7 +114,10 @@ mrcv = (MRefreshRecyclerMaterView) findViewById(R.id.mrcv);
         //初次载入
         mrcv.startRefresh();
 ```
-
+``` stylus
+mrcv.completeRequest(newData.size() == 0 ? true : false);    //刷新或者加载完成   判断是否还有下一页
+// mrcv.errorRequest();   //刷新或者加载失败
+```
 ``` stylus
 <declare-styleable name="MRefreshRecyclerMaterView">
         <attr name="mrcv_color_load_text" />    <!--加载更多  字体颜色-->

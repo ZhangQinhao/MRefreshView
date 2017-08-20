@@ -63,7 +63,8 @@ public class RecyclerViewDemoActivity extends AppCompatActivity {
                     }
                 }
                 demoAdapter.addNewData(newData);
-                mrcv.completeRequest(newData.size() == 0 ? true : false);
+                mrcv.completeRequest(newData.size() == 0 ? true : false);    //刷新或者加载完成   判断是否还有下一页
+//                mrcv.errorRequest();   //刷新或者加载失败
             }
         }, 1000);
     }
