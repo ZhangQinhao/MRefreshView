@@ -13,17 +13,17 @@
 建议使用As，方便版本更新。实在不行，只有复制粘贴源码了。
 
 
-###类结构
+### 类结构
 `MRefreshRecyclerBaseFView`是`RecyclerView`的子类，封装了一些必要触摸操作，以及回调监听
 `MRefreshRecyclerViewAdatper`是`Adapter`的子类，封装了刷新以及加载的控制条件。所有使用此类控件的Adapter都要继承这个类
 `MRefreshRecyclerBaseF`是整体封装的基类，用户如果需要自定义上拉刷新，下拉加载的效果可以直接继承此类，完成抽象方法。
 `MRefreshRecyclerLineView`/`MRefreshRecyclerMaterView`是两个已经继承`MRefreshRecyclerBaseF`的样式示例。
 `OnLoadMoreListener`/`OnRefreshListener`分别是加载更多以及下拉刷新的监听器，通过`set`进`MRefreshRecycerBaseF`，不设置则不具备相应功能。
 
-###MRefreshRecyclerMaterView
+### MRefreshRecyclerMaterView
 
 ![enter description here][1]
-####使用
+#### 使用
 ``` stylus
 <com.monke.mrefreshview.MRefreshRecyclerMaterView
         android:id="@+id/mrcv"
@@ -121,11 +121,11 @@ mrcv = (MRefreshRecyclerMaterView) findViewById(R.id.mrcv);
         <attr name="mrcv_color_refresh" format="color" />      <!--下拉刷新  环形进度条颜色-->
     </declare-styleable>
 ```
-###MRefreshRecyclerLineView
+### MRefreshRecyclerLineView
 
 ![enter description here][2]
 
-####使用
+#### 使用
 ``` stylus
 <com.monke.mrefreshview.MRefreshRecyclerLineView
         android:id="@+id/mrcv"
@@ -145,7 +145,7 @@ mrcv = (MRefreshRecyclerMaterView) findViewById(R.id.mrcv);
     </declare-styleable>
 ```
 
-###最后
+### 最后
 如果用户需要自定义自己的上下拉刷新控件（保证下拉效果是不下滑item）  都可以继承`MRefreshRecyclerBaseF`来实现，可以参考`MRefreshRecyclerLineView`/`MRefreshRecyclerMaterView`,
 下个版本会实现基于`ScrollView`的刷新，同时会完成下拉刷新头部与item同时滚动的效果。
 此控件的上拉刷新，下拉加载的时机已经封装在Adapter中，用户只需要把经历放到业务逻辑上就可以。
